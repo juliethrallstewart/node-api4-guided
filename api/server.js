@@ -1,9 +1,12 @@
 const express = require('express');
 const helmet = require('helmet');
-const db = require('../data/db')
+
+const secrets = require('../config/secrets.js');
+
+console.log('environment:', secrets.environment);
+// should log "environment development" to the console
 
 const apiRouter = require('./api-router.js');
-console.log('environment:', process.env.NODE_ENV);
 
 const server = express();
 
@@ -12,3 +15,9 @@ server.use(helmet());
 server.use('/api', apiRouter);
 
 module.exports = server;
+
+
+
+
+
+// console.log('environment:', process.env.NODE_ENV);
