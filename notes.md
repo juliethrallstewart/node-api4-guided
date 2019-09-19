@@ -30,3 +30,15 @@ so that we can make changes > commit and push > gets deployed
 ### To see logs on heroku
 
 heroku logs -a app-shouts --tail (app name is whatever you named it on heroku)
+
+## to config production with heroku/postgres
+
+npm i pg
+add the production config for pg into knex file
+
+- on your deplyed heroku site: 
+in the app homepage, go to resources, select heroku postgres & accept(provision)
+
+
+- to run migrations to production on postgres, vs say sqlite3 which is development
+npx heroku run knex migrate:latest -a nameOnHerokuOfApp
