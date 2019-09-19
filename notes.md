@@ -1,5 +1,10 @@
 # Deployment
 
+https://app-shouts.herokuapp.com/api/shouts
+
+- can paste the url into insomnia and add messages just like when developing
+- on local 
+
 ## Make Port Dynamic
 
 ## Set up Continuous Deployment on Heroku
