@@ -6,14 +6,27 @@ const router = express.Router();
 
 router.use(express.json());
 
-router.get('/', (req, res) => {
-  res.status(200).json({ api: 'up' });
-});
+// router.get('/', (req, res) => {
+//   res.status(200).json({ api: 'up' });
+// });
+
+// router.get('/', async (req, res) => {
+//   try {
+//     const shoutouts = await Shouts('shoutouts');
+//     const messageOfTheDay = process.env.MOTD || 'Hello World!';
+//     res.status(200).json({motd: messageOfTheDay, shoutouts})
+//   } catch (error) {
+//       console.error('\nERROR', error)
+//       res.status(500).json({error: 'cannot retrieve the shoutouts'})
+//   }
+// })
 
 router.get('/shouts', (req, res, next) => {
   Shouts.find()
     .then(shouts => {
-      res.status(200).json(shouts);
+      const shoutouts = shouts
+      const messageOfTheDay = process.env.MOTD || 'Hello World!';
+      res.status(200).json({motd: messageOfTheDay, shoutouts})
     })
     .catch(error => next(error));
 });

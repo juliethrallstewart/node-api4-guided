@@ -8,6 +8,13 @@ so that we can make changes > commit and push > gets deployed
 
 ### Steps
 
+- npm i dotenv
+- npm i helmet
+- create .env file
+- create config folder
+- add defaults.js into config
+- add secrets.js into config.
+
 - create new app on heroku. App needs a unique name.
 - got to the "Deploy" tab
 - click on Github button and consent to the security prompt
