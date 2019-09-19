@@ -46,4 +46,4 @@ in the app homepage, go to resources, select heroku postgres & accept(provision)
 
 
 - to run migrations to production on postgres, vs say sqlite3 which is development
-npx heroku run knex migrate:latest -a nameOnHerokuOfApp
+npx heroku run knex migrate:latest -a nameOnHerokuOfApp --> (app-shouts in this case)
